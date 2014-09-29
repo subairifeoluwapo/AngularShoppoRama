@@ -10,9 +10,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <script src="js/angular.min.js"></script>
-<!--     // <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-    // <script src="js/lodash.underscore.min.js"></script>
-    // <script src="js/angular-google-maps.min.js"></script> -->
 </head>
 
 <body>
@@ -23,7 +20,8 @@
 		</div>
 	</header>
 	<section ng-controller="sectionController">
-		<p class="error"></p>
+		<p class="error">{{errorMessage1}}</p>
+		<p class="error">{{errorMessage2}}</p>
 		<p class="intro2" ng-show="shops">Hello there! Zoom in to view your destination</p>
 		<p class="intro" ng-hide="shops">Hello there! Zoom in to view your location</p>
 		<input type="button" value="Weather ForeCast" id="fetchWeatherCondition" ng-click="fetchWeatherCondition()" ng-hide="conditions"/>
@@ -35,10 +33,10 @@
 				<div id="date">{{conditions.data.weather[0].date}}</div>
 				<div id="temp">Temp: {{conditions.data.current_condition[0].temp_C}}&deg C</div>
 			</div>
-			<div id="Map" ng-hide='url2'>
+			<div id="Map" ng-hide="shops">
 				<iframe width="90%" height="400" frameborder="0" style="border:0" ng-src="{{url1}}"></iframe>
 			</div>
-			<input type="submit" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="submit" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops" data-translate>
+			<input type="button" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="button" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops">
 			<br>
 			<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" ng-show="shops"/>
 			<div class="container" ng-repeat="shop in shops" ng-show="shops">
