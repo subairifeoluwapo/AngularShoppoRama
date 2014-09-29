@@ -1,0 +1,243 @@
+html {
+	background-image: url('../img/image7.jpg');
+	background-size: cover;
+}
+
+
+#heading {
+	width: 100%;
+	padding-top: .5em;
+	margin: 0;
+	background-image: url('../img/image3.jpg');
+	margin-bottom: 0;
+}
+
+h1 {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 2em;
+	color: white;
+	margin-left: 4em;
+}
+
+#heading p {
+	font-family: 'Lobster Two', cursive;
+	font-size: 1.5em;
+	color: white;
+	margin-left: 6em;
+}
+
+.intro {
+	float: right;
+	margin-right: 5em;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-family: 'Lobster Two', cursive; 
+}
+
+.weatherText {
+	font-family: 'Lobster Two', cursive; 
+	margin-top: 0;
+	padding-top: 0;
+	margin-left: 4em;
+}
+
+.intro2 {
+	float: right;
+	margin-right: 5em;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-family: 'Lobster Two', cursive; 
+}
+
+
+#weatherCast {
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	text-align: center;
+	height: 9.5em;
+	width: 9em;
+	border: solid;
+	border-radius: 30%;
+	border-color: white;
+	font-family: 'Orbitron', sans-serif;
+	opacity: .8;
+	position: fixed;
+	margin-top: 6.4em;
+	margin-left: 3em;
+}
+
+
+#weatherCast:hover {
+	background-image: url('../img/image2.jpg');
+	background-size: cover;
+	opacity: 1;
+}
+
+#weatherIcon {
+	width: 3em;
+	height:3em;
+	margin: .2em;
+}
+
+#weatherCondition {
+	font-size: 1em;
+}
+
+#date {
+	font-size: .9em;
+}
+
+#temp {
+	font-size: .8em;
+}
+
+#time {
+	font-size: .7em;
+}
+
+.wrapper {
+	color: white;
+	padding-top: 4em;}
+
+#nearByShops {
+	font-family: 'Righteous', cursive;
+	/*border: none;*/
+	padding: .5em .2em;
+	margin-left: 37.5em;
+	margin-top: 1em;
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	color: white;
+	border-radius: 20%;
+	opacity: .8;
+}
+
+#nearByShops:hover {
+	color: black;
+	opacity: 1;
+}
+
+#homePage {
+	font-family: 'Righteous', cursive;
+	padding: .5em .2em;
+	margin-left: 37.5em;
+	margin-top: 1em;
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	color: white;
+	border-radius: 20%;
+	opacity: .8;
+}
+
+#homePage:hover {
+	color: black;
+	opacity: 1;
+}
+
+#fetchWeatherCondition {
+	font-family: 'Righteous', cursive;
+	padding: .5em .2em;
+	margin-left: 10em;
+	margin-top: 1em;
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	color: white;
+	border-radius: 20%;
+	opacity: .8;
+}
+
+#fetchWeatherCondition:hover {
+	color: black;
+	opacity: 1;
+}
+
+#Map {
+	margin-left: 7em;
+}
+
+/*.angular-google-map-container { 
+	width: 90%; 
+	height: 400px; 
+}
+*/
+#showOnMap {
+	font-size: .8em;
+	/*border: none;*/
+	padding: .5em .2em;
+	margin-top: 1em;
+	margin-bottom: .5em;
+	margin-left: 15em;
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	color: white;
+	border-radius: 30%;
+	opacity: .8;
+}
+
+#showOnMap:hover {
+	color: black;
+	opacity: 1;
+}
+
+
+.container {
+	background-image: url('../img/image3.jpg');
+	background-size: contain;
+	text-align: center;
+	width: 70%;
+	margin-left: 13em;
+	margin-right: 20em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	max-height: 60em;
+}
+
+
+#shopName {
+	font-family: 'Righteous', cursive;
+	color: black;
+	text-align: center;
+	font-size: 3em;
+	margin-top: 1em;
+}
+
+#tips {
+	font-family: 'Lobster Two', cursive;
+	font-size: 1em;
+}
+
+#address {
+	font-family: 'Lobster Two', cursive;
+	font-size: 1.5em;
+	color: white;
+}
+#hours {
+	font-family: 'Lobster Two', cursive;
+	font-size: 1em;
+}
+
+footer {
+	font-size: 0.6em;
+	text-align: center;
+	clear: both;
+	padding-top: 10em;
+	padding-bottom: 0;
+}
+
+footer p {
+	font-weight: bolder;
+	font-size: 1.5em;
+}
+
+.social-icon {
+	width: 25px;
+	height: 25px;
+	margin: 0 5px;
+}
+
+.social-icon:hover {
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+}

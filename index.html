@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app = "AngularShoppoRama">
+<head>
+	<title>Shoppo^Rama</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link href='http://fonts.googleapis.com/css?family=Righteous|Orbitron:500|Lobster+Two:700' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+<!--     // <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    // <script src="js/lodash.underscore.min.js"></script>
+    // <script src="js/angular-google-maps.min.js"></script> -->
+</head>
+
+<body>
+	<header>
+		<div id="heading">
+			<h1 class="expandOpen">Shoppo^Rama</h1>
+			<p class="expandOpen">Shop Wherever You Are</p>
+		</div>
+	</header>
+	<section ng-controller="sectionController">
+		<p class="error"></p>
+		<p class="intro2" ng-show="shops">Hello there! Zoom in to view your destination</p>
+		<p class="intro" ng-hide="shops">Hello there! Zoom in to view your location</p>
+		<input type="button" value="Weather ForeCast" id="fetchWeatherCondition" ng-click="fetchWeatherCondition()" ng-hide="conditions"/>
+		<p class="weatherText" ng-hide="conditions">Click here to see the weather condition at your location.</p>
+		<div class="wrapper">
+			<div id="weatherCast" ng-show="conditions">
+				<img id="weatherIcon" ng-src="{{conditions.data.current_condition[0].weatherIconUrl[0].value}}">
+				<div id="weatherCondition">{{conditions.data.current_condition[0].weatherDesc[0].value}}</div>
+				<div id="date">{{conditions.data.weather[0].date}}</div>
+				<div id="temp">Temp: {{conditions.data.current_condition[0].temp_C}}&deg C</div>
+			</div>
+			<div id="Map" ng-hide="shops">
+				<!-- <google-map center="map.center" zoom="map.zoom" draggable="true" options="options"></google-map> -->
+				<!-- <img ng-src=""> -->
+				<iframe width="90%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=3&maptype=satellite&q=314+herbert+macaulay+yaba+lagos"></iframe>
+			</div>
+			<input type="submit" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="submit" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops" data-translate>
+			<br>
+			<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" ng-show="shops"/>
+			<div class="container" ng-repeat="shop in shops" ng-show="shops">
+				<div id="shopName">
+				{{shop.venue.name}}
+				</div>
+				<br>
+				<div id="tips">
+				{{shop.tips[0].text}}
+				</div>
+				<br>
+				<div id="address">
+				{{shop.venue.location.formattedAddress[0]}}, {{shop.venue.location.formattedAddress[1]}}, {{shop.venue.location.formattedAddress[2]}}, {{shop.venue.location.formattedAddress[3]}}, {{shop.venue.location.formattedAddress[4]}}.
+				</div>
+				<div id="hours">
+				Open Hours: {{shop.venue.hours.status}}
+				</div>
+				<br>
+				<div  ng-show="url"  class="smaller">
+				<iframe width="70%" height="300" frameborder="0" style="border:0" ng-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=11&maptype=roadmap&q=lagos+nigeria"></iframe>
+				</div>
+				<br>
+				<div id="noItem"></div>
+			</div>
+		</div>
+	</section>
+<footer>
+	<a href="http://twitter.com/@subair_origins"><img src="img/twitterwrap2.png" alt="Twitter Logo" class="social-icon" /></a>
+	<a href="http://facebook.com/SubairIfeoluwapo"><img src="img/facebookwrap2.png" alt="Facebook Logo" class="social-icon"/></a>
+	<a href="http://instagram.com/subair_origins"><img src="img/instagramwrap.png" alt="Instagram Logo" class="social-icon"/></a>
+	<p>Powered By Google, Foursquare and World-Weather-Online</p>
+	<p>&copy; 2014 Subair Ifeoluwapo.</p>
+</footer>
+<script type="text/javascript" src="js/myscript.js"></script>
+</body>
+</html>
