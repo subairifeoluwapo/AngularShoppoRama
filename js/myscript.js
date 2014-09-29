@@ -12,7 +12,6 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
 				$scope.latlng = lat + ',' + lon;
-				$scope.onStartShowMap();
 			});
 		}	else {$scope.errorMessage1 = "Geolocation is not supported by this browser, please use a device that supports GPS";
 			};
@@ -33,19 +32,19 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 					client_secret: 'Q4RXJT4IZVWALD1HIOWNKXVUPVJZBUJ5JEPDU4HYD1KVF1GD', 
 					section: 'shops', 
 					v: '20130815', 
-					venuephotos: 1,
+					venuePhotos: 1,
 					callback : 'JSON_CALLBACK'
 				}
 			};
 		config.params.ll = $scope.latlng;
 		$http.jsonp(url, config).success(function(response){
 			console.log(response.response.groups[0].items);
-			if(response.response.groups.items.length !== 0){
-				var post = response.response.groups[0];
+			var post = response.response.groups[0];
+			if(post.items.length !== 0){
 				$scope.shops = post.items;
-				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=11&maptype=roadmap&q=lagos';
+				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=10&maptype=roadmap&q=lagos';
 			}	else {
-					$scope.errorMessage2 = "Sorry, there are no recognised shops around your location";
+					$scope.errorMessage2 = "Sorry, there are no recognised shops within 1000km your location";
 				};
 		});	
 	};

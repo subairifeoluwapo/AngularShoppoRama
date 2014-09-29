@@ -34,7 +34,15 @@
 				<div id="temp">Temp: {{conditions.data.current_condition[0].temp_C}}&deg C</div>
 			</div>
 			<div id="Map" ng-hide="shops">
-				<iframe width="90%" height="400" frameborder="0" style="border:0" ng-src="{{url1}}"></iframe>
+				<div  ng-hide="url1" id="notes">
+					<input type="button" value="Click here to make map visible" ng-click="onStartShowMap()" id="visibleMap">
+					<ul type="circle">
+						<li>Get locations of shops within 1000km radius of your location!</li>
+						<li>Get current weather condition to enable you plan your movement!!</li>
+						<li>Get it anywhere around the world!!!</li>
+					</ul>
+				</div>
+				<iframe width="90%" height="300" frameborder="0" style="border:0" ng-src="{{url1}}"></iframe>
 			</div>
 			<input type="button" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="button" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops">
 			<br>
@@ -56,7 +64,7 @@
 				</div>
 				<br>
 				<div  ng-show="showMe"  class="smaller">
-				<iframe width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}"></iframe>
+				<iframe width="70%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=10&maptype=roadmap&q="></iframe>
 				</div>
 				<br>
 				<div id="noItem"></div>

@@ -153,6 +153,25 @@ h1 {
 	opacity: 1;
 }
 
+#notes{
+	font-family: 'Righteous', cursive;
+	color: black;
+	font-weight: bolder;
+}
+
+#visibleMap {
+	font-family: 'Righteous', cursive;
+	border: none;
+	color: black;
+	opacity: .3;
+
+}
+
+#visibleMap:hover {
+	opacity: 1;
+	border: solid;
+}
+
 #Map {
 	margin-left: 7em;
 }
@@ -160,7 +179,6 @@ h1 {
 
 #showOnMap {
 	font-size: .8em;
-	/*border: none;*/
 	padding: .5em .2em;
 	margin-top: 1em;
 	margin-bottom: .5em;
