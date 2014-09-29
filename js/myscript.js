@@ -5,9 +5,7 @@ var app = angular.module('AngularShoppoRama', []).config(function($sceProvider){
 
 app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 
-	$scope.trues = 2 + 3;
-
-	$scope.primaryFunction = function(){
+		$scope.primaryFunction = function(){
 		if(navigator.geolocation){	
 			navigator.geolocation.getCurrentPosition(function(position){
 				console.log(position);
@@ -39,7 +37,9 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 				}
 			};
 		config.params.ll = $scope.latlng;
+		$scope.loading = true;
 		$http.jsonp(url, config).success(function(response){
+			$scope.loading = false;
 			console.log(response.response.groups[0].items);
 			var post = response.response.groups[0];
 			if(post.items.length !== 0 || post.items.venue.photos.groups.length !== 0){
@@ -63,7 +63,9 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 			}
 		};
 		config2.params.q = $scope.latlng;
+		$scope.loading = true;
 		$http.jsonp(url3, config2).success(function(response){
+			$scope.loading = false;
 			console.log(response);
 			$scope.conditions = response;
 		});
@@ -76,5 +78,6 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 	$scope.fetchMapLocation = function(){
 		$scope.showMe = 2 + 2;
 	};
+	$scope.trues = 2 + 3;
 
 }]);
