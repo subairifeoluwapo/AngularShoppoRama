@@ -47,6 +47,7 @@
 			<input type="button" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="button" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops">
 			<br>
 			<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" ng-show="shops"/>
+			<p ng-show="shops" id="toTop"><a href="#backtoTop">To Bottom</a></p>
 			<div class="container" ng-repeat="shop in shops" ng-show="shops">
 				<div id="shopName">
 					{{shop.venue.name}}
@@ -64,7 +65,8 @@
 				</div>
 				<br>
 				<div id="venuephoto">
-					<img ng-src="{{shop.venue.photos.groups[0].items[0].prefix}}150x150{{shop.venue.photos.groups[0].items[0].suffix}}">
+					<img ng-src="{{shop.venue.photos.groups[0].items[0].prefix}}250x150{{shop.venue.photos.groups[0].items[0].suffix}}">
+					<p class="error">{{errorMessage3}}</p>
 				</div>
 				<br>
 				<div  ng-show="showMe"  class="smaller">
@@ -73,6 +75,7 @@
 				<br>
 				<div id="noItem"></div>
 			</div>
+			<p id="backtoTop" ng-show="shops"><a href="#toTop">Back to Top</a></p>
 		</div>
 	</section>
 <footer>

@@ -177,13 +177,52 @@ h1 {
 }
 
 #venuephoto {
+
+	border: solid;
+	border-color: black;
 	margin: auto;
 	width: 250px;
 	height: 150px;
 }
 
+#backtoTop {
+	font-family: 'Righteous', cursive;
+	float: right;
+	margin-right: 2em;
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	border-radius: 30%;
+	padding: .5em .2em;
+	opacity: .8;
+}
 
+#backtoTop:hover {
+	opacity: 1;
+}
+
+#toTop {
+	font-family: 'Righteous', cursive;
+	float: right;
+	margin-right: 2em;
+	background-image: url('../img/image5.jpg');
+	background-size: contain;
+	border-radius: 30%;
+	padding: .5em .5em;
+	opacity: .8;
+}
+
+#toTop:hover {
+	opacity: 1;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+ 
 #showOnMap {
+	font-family: 'Righteous', cursive;
 	font-size: .8em;
 	padding: .5em .2em;
 	margin-top: 1em;

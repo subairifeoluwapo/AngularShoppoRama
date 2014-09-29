@@ -5,6 +5,8 @@ var app = angular.module('AngularShoppoRama', []).config(function($sceProvider){
 
 app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 
+	$scope.trues = 2 + 3;
+
 	$scope.primaryFunction = function(){
 		if(navigator.geolocation){	
 			navigator.geolocation.getCurrentPosition(function(position){
@@ -40,10 +42,11 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 		$http.jsonp(url, config).success(function(response){
 			console.log(response.response.groups[0].items);
 			var post = response.response.groups[0];
-			if(post.items.length !== 0){
+			if(post.items.length !== 0 || post.items.venue.photos.groups.length !== 0){
 				$scope.shops = post.items;
-				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=10&maptype=roadmap&q=lagos';
+				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=8&maptype=roadmap&q=lagos';
 			}	else {
+					$scope.errorMessage3 = "Sorry, no image for this location";
 					$scope.errorMessage2 = "Sorry, there are no recognised shops within 1000km your location";
 				};
 		});	
