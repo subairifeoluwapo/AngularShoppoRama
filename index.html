@@ -9,7 +9,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Righteous|Orbitron:500|Lobster+Two:700' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script src="js/angular.min.js"></script>
 <!--     // <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
     // <script src="js/lodash.underscore.min.js"></script>
@@ -36,10 +35,8 @@
 				<div id="date">{{conditions.data.weather[0].date}}</div>
 				<div id="temp">Temp: {{conditions.data.current_condition[0].temp_C}}&deg C</div>
 			</div>
-			<div id="Map" ng-hide="shops">
-				<!-- <google-map center="map.center" zoom="map.zoom" draggable="true" options="options"></google-map> -->
-				<!-- <img ng-src=""> -->
-				<iframe width="90%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=3&maptype=satellite&q=314+herbert+macaulay+yaba+lagos"></iframe>
+			<div id="Map" ng-hide='url2'>
+				<iframe width="90%" height="400" frameborder="0" style="border:0" ng-src="{{url1}}"></iframe>
 			</div>
 			<input type="submit" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="submit" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops" data-translate>
 			<br>
@@ -60,8 +57,8 @@
 				Open Hours: {{shop.venue.hours.status}}
 				</div>
 				<br>
-				<div  ng-show="url"  class="smaller">
-				<iframe width="70%" height="300" frameborder="0" style="border:0" ng-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=11&maptype=roadmap&q=lagos+nigeria"></iframe>
+				<div  ng-show="showMe"  class="smaller">
+				<iframe width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}"></iframe>
 				</div>
 				<br>
 				<div id="noItem"></div>
