@@ -176,6 +176,12 @@ h1 {
 	margin-left: 7em;
 }
 
+#venuephoto {
+	margin: auto;
+	width: 250px;
+	height: 150px;
+}
+
 
 #showOnMap {
 	font-size: .8em;

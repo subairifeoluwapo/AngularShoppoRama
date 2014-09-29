@@ -49,22 +49,26 @@
 			<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" ng-show="shops"/>
 			<div class="container" ng-repeat="shop in shops" ng-show="shops">
 				<div id="shopName">
-				{{shop.venue.name}}
+					{{shop.venue.name}}
 				</div>
 				<br>
 				<div id="tips">
-				{{shop.tips[0].text}}
+					{{shop.tips[0].text}}
 				</div>
 				<br>
 				<div id="address">
-				{{shop.venue.location.formattedAddress[0]}}, {{shop.venue.location.formattedAddress[1]}}, {{shop.venue.location.formattedAddress[2]}}, {{shop.venue.location.formattedAddress[3]}}, {{shop.venue.location.formattedAddress[4]}}.
+					{{shop.venue.location.formattedAddress[0]}}, {{shop.venue.location.formattedAddress[1]}}, {{shop.venue.location.formattedAddress[2]}}, {{shop.venue.location.formattedAddress[3]}}, {{shop.venue.location.formattedAddress[4]}}.
 				</div>
 				<div id="hours">
-				Open Hours: {{shop.venue.hours.status}}
+					Open Hours: {{shop.venue.hours.status}}
+				</div>
+				<br>
+				<div id="venuephoto">
+					<img ng-src="{{shop.venue.photos.groups[0].items[0].prefix}}150x150{{shop.venue.photos.groups[0].items[0].suffix}}">
 				</div>
 				<br>
 				<div  ng-show="showMe"  class="smaller">
-				<iframe width="70%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=10&maptype=roadmap&q="></iframe>
+				<iframe width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}"></iframe>
 				</div>
 				<br>
 				<div id="noItem"></div>
