@@ -1,6 +1,7 @@
 html {
-	background-image: url('../img/image7.jpg');
-	background-size: cover;
+	background-image: url('../img/image12.jpg');
+	background-repeat: repeat;
+	background-position: bottom;
 }
 
 
@@ -8,32 +9,33 @@ html {
 	width: 100%;
 	padding-top: .5em;
 	margin: 0;
-	background-image: url('../img/image3.jpg');
+	background-image: url('../img/image10.jpg');
 	margin-bottom: 0;
 }
 
 h1 {
 	font-family: 'Orbitron', sans-serif;
 	font-size: 2em;
-	color: white;
+	color: grey;
 	margin-left: 3.8em;
 }
 
 .legend {
 	font-family: 'Orbitron', sans-serif;
 	font-size: .8em;
-	color: black;
+	color: white;
 	margin-left: 5em;
 }
 
 #heading p {
 	font-family: 'Lobster Two', cursive;
 	font-size: 1.5em;
-	color: white;
+	color: grey;
 	margin-left: 6em;
 }
 
 .intro {
+	color: white;
 	float: right;
 	margin-right: 5em;
 	margin-top: 0;
@@ -47,9 +49,11 @@ h1 {
 	margin-top: 0;
 	padding-top: 0;
 	margin-left: 4em;
+	color: white;
 }
 
 .intro2 {
+	color: white;
 	float: right;
 	margin-right: 5em;
 	margin-top: 0;
@@ -114,7 +118,7 @@ h1 {
 	padding: .5em .2em;
 	margin-left: 37.5em;
 	margin-top: 1em;
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image10.jpg');
 	background-size: contain;
 	color: white;
 	border-radius: 20%;
@@ -131,7 +135,7 @@ h1 {
 	padding: .5em .2em;
 	margin-left: 37.5em;
 	margin-top: 1em;
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image10.jpg');
 	background-size: contain;
 	color: white;
 	border-radius: 20%;
@@ -148,7 +152,7 @@ h1 {
 	padding: .5em .2em;
 	margin-left: 10em;
 	margin-top: 1em;
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image10.jpg');
 	background-size: contain;
 	color: white;
 	border-radius: 20%;
@@ -162,8 +166,8 @@ h1 {
 
 #notes{
 	font-family: 'Righteous', cursive;
-	color: black;
-	font-weight: bolder;
+	color: white;
+
 }
 
 #visibleMap {
@@ -196,7 +200,7 @@ h1 {
 	font-family: 'Righteous', cursive;
 	float: right;
 	margin-right: 2em;
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image10.jpg');
 	background-size: contain;
 	border-radius: 30%;
 	padding: .5em .2em;
@@ -218,7 +222,7 @@ h1 {
 	font-family: 'Righteous', cursive;
 	float: right;
 	margin-right: 2em;
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image10.jpg');
 	background-size: contain;
 	border-radius: 30%;
 	padding: .5em .5em;
@@ -242,7 +246,7 @@ a {
 	margin-top: 1em;
 	margin-bottom: .5em;
 	margin-left: 15em;
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image10.jpg');
 	background-size: contain;
 	color: white;
 	border-radius: 30%;
@@ -256,8 +260,8 @@ a {
 
 
 .container {
-	background-image: url('../img/image3.jpg');
-	background-size: contain;
+	background-image: url('../img/image10.jpg');
+	background-size: cover;
 	text-align: center;
 	width: 70%;
 	margin-left: 13em;
@@ -270,7 +274,7 @@ a {
 
 #shopName {
 	font-family: 'Righteous', cursive;
-	color: black;
+	color: grey;
 	text-align: center;
 	font-size: 3em;
 	margin-top: 1em;
@@ -279,19 +283,22 @@ a {
 #tips {
 	font-family: 'Lobster Two', cursive;
 	font-size: 1em;
+	color: black;
 }
 
 #address {
 	font-family: 'Lobster Two', cursive;
 	font-size: 1.5em;
-	color: white;
+	color: black;
 }
 #hours {
 	font-family: 'Lobster Two', cursive;
 	font-size: 1em;
+	color: black;
 }
 
 footer {
+	color: white;
 	font-size: 0.6em;
 	text-align: center;
 	clear: both;
@@ -311,6 +318,6 @@ footer p {
 }
 
 .social-icon:hover {
-	background-image: url('../img/image5.jpg');
+	background-image: url('../img/image11.jpg');
 	background-size: contain;
 }
