@@ -1,0 +1,85 @@
+
+
+@media screen and (max-width: 980px) {
+
+#heading {
+	text-align: left;
+	font-size:.6em;
+}
+
+h1 {
+	margin-left: 2em;
+}
+
+
+#heading p {
+	margin-left: 10em;
+	background-size: contain;
+}
+
+#showOnMap {
+	margin-left: 5em;
+
+}
+
+.intro {
+	margin-top: 1em;
+	font-size: .75em;
+}
+
+.intro2 {
+	margin-top: 1em;
+	font-size: .75em;
+}
+
+#preloader {
+	margin-left: 10em;
+	width: 60px;
+	height: 60px;
+	opacity: .7;
+}
+
+#weatherCast {
+	position: static;
+	opacity: .8;
+	float: left;
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.wrapper {
+	padding-top: 1em;
+}
+
+#nearByShops {
+	margin-left: 8em;
+}
+
+#Map {
+	margin-left: 2em;
+}
+
+#homePage {
+	margin-left: 2em;
+}
+
+.container {
+	width: 92%;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 7em;
+	max-height: 45em;
+}
+
+
+#shopName {
+	font-size: 1.5em;
+}
+
+footer p {
+	font-size: 1.2em;
+}
+
+
+}

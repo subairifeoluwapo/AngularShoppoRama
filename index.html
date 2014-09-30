@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app = "AngularShoppoRama">
+<head>
+	<title>Shoppo^Rama</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link href='http://fonts.googleapis.com/css?family=Righteous|Orbitron:500|Lobster+Two:700' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="heading">
+			<h1 class="expandOpen">Shoppo^Rama</h1>
+			<p class="expandOpen">Shop Wherever You Are</p>
+		</div>
+	</header>
+	<section ng-controller="sectionController">
+		<p class="error">{{errorMessage1}}</p>
+		<p class="error">{{errorMessage2}}</p>
+		<p class="intro2" ng-show="shops">Hello there! Zoom in to view your destination</p>
+		<p class="intro" ng-hide="shops">Hello there! Zoom in to view your location</p>
+		<input type="button" value="Weather ForeCast" id="fetchWeatherCondition" ng-click="fetchWeatherCondition()" ng-hide="conditions"/>
+		<p class="weatherText" ng-hide="conditions">Click here to see the weather condition at your location.</p>
+		<div class="wrapper">
+			<div id="weatherCast" ng-show="conditions">
+				<img id="weatherIcon" ng-src="{{conditions.data.current_condition[0].weatherIconUrl[0].value}}">
+				<div id="weatherCondition">{{conditions.data.current_condition[0].weatherDesc[0].value}}</div>
+				<div id="date">{{conditions.data.weather[0].date}}</div>
+				<div id="temp">Temp: {{conditions.data.current_condition[0].temp_C}}&deg C</div>
+			</div>
+			<div id="Map" ng-hide="shops">
+				<div  ng-hide="url1" id="notes">
+					<input type="button" value="Click here to make map visible" ng-click="onStartShowMap()" id="visibleMap">
+					<ul type="circle">
+						<li>Get locations of shops within 1000km radius of your location!</li>
+						<li>Get current weather condition to enable you plan your movement!!</li>
+						<li>Get it anywhere around the world!!!</li>
+					</ul>
+					<img id="preloader" ng-src="img/image8.GIF" ng-show="loading">
+				</div>
+				<iframe width="90%" height="300" frameborder="0" style="border:0" ng-src="{{url1}}"></iframe>
+			</div>
+			<input type="button" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="button" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops">
+			<br>
+			<div ng-show="shops">
+				<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" />
+				<ul type="circle">
+					<li class="legend">The Red  marker labelled 'P' shows your position.</li>
+					<li class="legend">The Green marker labelled 'D' shows your destination</li>
+				</ul>
+			</div>
+			<p ng-show="shops" id="toTop"><a href="#backtoTop">To Bottom</a></p>
+			<div class="container" ng-repeat="shop in shops" ng-show="shops">
+				<div id="shopName">
+					{{shop.venue.name}}
+				</div>
+				<br>
+				<div id="tips">
+					{{shop.tips[0].text}}
+				</div>
+				<br>
+				<div id="address">
+					{{shop.venue.location.formattedAddress[0]}}, {{shop.venue.location.formattedAddress[1]}}, {{shop.venue.location.formattedAddress[2]}}, {{shop.venue.location.formattedAddress[3]}}, {{shop.venue.location.formattedAddress[4]}}.
+				</div>
+				<div id="hours">
+					Open Hours: {{shop.venue.hours.status}}
+				</div>
+				<br>
+				<div id="venuephoto">
+					<img ng-src="{{shop.venue.photos.groups[0].items[0].prefix}}250x150{{shop.venue.photos.groups[0].items[0].suffix}}">
+					<p class="error">{{errorMessage3}}</p>
+				</div>
+				<br>
+				<div  ng-show="showMe"  class="smaller">
+				<img width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}{{shop.venue.location.formattedAddress[0]}}+{{shop.venue.location.formattedAddress[1]}}&markers=color:green|label:D|{{shop.venue.location.lat}},{{shop.venue.location.lng}}">
+				</div>
+				<br>
+				<div id="noItem"></div>
+			</div>
+			<p id="backtoTop" ng-show="shops"><a href="#toTop">To Top</a></p>
+		</div>
+	</section>
+<footer>
+	<a href="http://twitter.com/@subair_origins"><img src="img/twitterwrap2.png" alt="Twitter Logo" class="social-icon" /></a>
+	<a href="http://facebook.com/SubairIfeoluwapo"><img src="img/facebookwrap2.png" alt="Facebook Logo" class="social-icon"/></a>
+	<a href="http://instagram.com/subair_origins"><img src="img/instagramwrap.png" alt="Instagram Logo" class="social-icon"/></a>
+	<p>Powered By Google, Foursquare and World-Weather-Online</p>
+	<p>&copy; 2014 Subair Ifeoluwapo.</p>
+</footer>
+<script type="text/javascript" src="js/myscript.js"></script>
+</body>
+</html>
