@@ -47,7 +47,13 @@
 			</div>
 			<input type="button" id="nearByShops" value="Find Shops Nearby" ng-click="fetchLocations()" ng-hide="shops"><input type="button" id="homePage" value="Back To Home Page" ng-click="reloadPage()" ng-show="shops">
 			<br>
-			<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" ng-show="shops"/>
+			<div ng-show="shops">
+				<input type="button" value="Show on Map" id="showOnMap" ng-click="fetchMapLocation()" />
+				<ul type="circle">
+					<li class="legend">The Red  marker labelled 'P' shows your position.</li>
+					<li class="legend">The Green marker labelled 'D' shows your destination</li>
+				</ul>
+			</div>
 			<p ng-show="shops" id="toTop"><a href="#backtoTop">To Bottom</a></p>
 			<div class="container" ng-repeat="shop in shops" ng-show="shops">
 				<div id="shopName">
@@ -71,7 +77,7 @@
 				</div>
 				<br>
 				<div  ng-show="showMe"  class="smaller">
-				<iframe width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}"></iframe>
+				<img width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}{{shop.venue.location.formattedAddress[0]}}+{{shop.venue.location.formattedAddress[1]}}&markers=color:green|label:D|{{shop.venue.location.lat}},{{shop.venue.location.lng}}">
 				</div>
 				<br>
 				<div id="noItem"></div>

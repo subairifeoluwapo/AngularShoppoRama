@@ -43,7 +43,7 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 			var post = response.response.groups[0];
 			if(post.items.length !== 0 || post.items.venue.photos.groups.length !== 0){
 				$scope.shops = post.items;
-				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?q=Lagos+Nigeria&key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=4&maptype=roadmap';
+				$scope.url2 = 'https://maps.googleapis.com/maps/api/staticmap?zoom=12&size=600x300&maptype=roadmap&markers=color:red|label:P|' + $scope.latlng +'&center=';
 				$scope.loading = false;
 			}	else {
 					$scope.errorMessage3 = "Sorry, no image for this location";
