@@ -17,6 +17,11 @@ h1 {
 	background-size: contain;
 }
 
+#showOnMap {
+	margin-left: 5em;
+
+}
+
 .intro {
 	margin-top: 1em;
 	font-size: .75em;
@@ -25,6 +30,13 @@ h1 {
 .intro2 {
 	margin-top: 1em;
 	font-size: .75em;
+}
+
+#preloader {
+	margin-left: 10em;
+	width: 60px;
+	height: 60px;
+	opacity: .7;
 }
 
 #weatherCast {
@@ -57,7 +69,7 @@ h1 {
 	margin-left: 1em;
 	margin-right: 1em;
 	margin-top: 7em;
-	max-height: 38em;
+	max-height: 45em;
 }
 
 

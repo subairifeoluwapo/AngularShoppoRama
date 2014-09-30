@@ -39,12 +39,12 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 		config.params.ll = $scope.latlng;
 		$scope.loading = true;
 		$http.jsonp(url, config).success(function(response){
-			$scope.loading = false;
 			console.log(response.response.groups[0].items);
 			var post = response.response.groups[0];
 			if(post.items.length !== 0 || post.items.venue.photos.groups.length !== 0){
 				$scope.shops = post.items;
-				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=8&maptype=roadmap&q=lagos';
+				$scope.url2 = 'https://www.google.com/maps/embed/v1/place?q=Lagos+Nigeria&key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=4&maptype=roadmap';
+				$scope.loading = false;
 			}	else {
 					$scope.errorMessage3 = "Sorry, no image for this location";
 					$scope.errorMessage2 = "Sorry, there are no recognised shops within 1000km your location";
@@ -65,9 +65,9 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 		config2.params.q = $scope.latlng;
 		$scope.loading = true;
 		$http.jsonp(url3, config2).success(function(response){
-			$scope.loading = false;
 			console.log(response);
 			$scope.conditions = response;
+			$scope.loading = false;
 		});
 	};
 
