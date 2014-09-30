@@ -5,7 +5,7 @@ var app = angular.module('AngularShoppoRama', []).config(function($sceProvider){
 
 app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 
-		$scope.primaryFunction = function(){
+	$scope.primaryFunction = function(){
 		if(navigator.geolocation){	
 			navigator.geolocation.getCurrentPosition(function(position){
 				console.log(position);
@@ -19,7 +19,8 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 	$scope.primaryFunction();
 
 	$scope.onStartShowMap = function(){
-		$scope.url1 = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=4&center=' + $scope.latlng +'&maptype=satellite';
+		$scope.url1 = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDzBjNNTZDL-eYH_Nbth3IMZTcGN3PR7aw&zoom=4&center=' 
+						+ $scope.latlng +'&maptype=satellite';
 		console.log($scope.url1);
 	};
 
@@ -27,7 +28,7 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 	$scope.fetchLocations = function() {
 		var url = 'https://api.foursquare.com/v2/venues/explore';
 		var config = {
-				params : {
+				params: {
 					client_id: 'HBMVGNAHBQMV5A0FM3RLUM1NIXXZ1CU4XXOLCOP4GLXGGBHC', 
 					client_secret: 'Q4RXJT4IZVWALD1HIOWNKXVUPVJZBUJ5JEPDU4HYD1KVF1GD', 
 					section: 'shops', 
@@ -41,13 +42,16 @@ app.controller('sectionController', ['$scope','$http', function($scope, $http) {
 		$http.jsonp(url, config).success(function(response){
 			console.log(response.response.groups[0].items);
 			var post = response.response.groups[0];
-			if(post.items.length !== 0 || post.items.venue.photos.groups.length !== 0){
+			if(post.items.length !== 0){
 				$scope.shops = post.items;
-				$scope.url2 = 'https://maps.googleapis.com/maps/api/staticmap?zoom=12&size=600x300&maptype=roadmap&markers=color:red|label:P|' + $scope.latlng +'&center=';
+				$scope.url2 = 'https://maps.googleapis.com/maps/api/staticmap?zoom=12&size=600x300&maptype=roadmap&markers=color:red|label:P|'
+								 + $scope.latlng +'&center=';
+				// if(post.items.venue.photos.count === 0 ){
+				// 	$scope.errorMessage3 = "Sorry, no image for this location";
+				// }
 				$scope.loading = false;
 			}	else {
-					$scope.errorMessage3 = "Sorry, no image for this location";
-					$scope.errorMessage2 = "Sorry, there are no recognised shops within 1000km your location";
+					$scope.errorMessage2 = "Sorry, there are no recognised shops within 1000km radius your location";
 				};
 		});	
 	};

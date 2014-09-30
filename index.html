@@ -73,11 +73,11 @@
 				<br>
 				<div id="venuephoto">
 					<img ng-src="{{shop.venue.photos.groups[0].items[0].prefix}}250x150{{shop.venue.photos.groups[0].items[0].suffix}}">
-					<p class="error">{{errorMessage3}}</p>
+					<!-- <p class="error">{{errorMessage3}}</p> -->
 				</div>
 				<br>
 				<div  ng-show="showMe"  class="smaller">
-				<img width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}{{shop.venue.location.formattedAddress[0]}}+{{shop.venue.location.formattedAddress[1]}}&markers=color:green|label:D|{{shop.venue.location.lat}},{{shop.venue.location.lng}}">
+					<img width="70%" height="300" frameborder="0" style="border:0" ng-src="{{url2}}{{shop.venue.location.formattedAddress[0]}}+{{shop.venue.location.formattedAddress[1]}}&markers=color:green|label:D|{{shop.venue.location.lat}},{{shop.venue.location.lng}}">
 				</div>
 				<br>
 				<div id="noItem"></div>
