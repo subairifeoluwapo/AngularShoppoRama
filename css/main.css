@@ -322,6 +322,5 @@ footer p {
 }
 
 .social-icon:hover {
-	background-image: url('../img/image11.jpg');
-	background-size: contain;
+	opacity: .5;
 }
